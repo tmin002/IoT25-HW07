@@ -29,11 +29,9 @@ We calibrated the model with:
 - `txPower = -58 dBm` (measured average RSSI at 1 meter)
 - `n = 2.2` (realistic indoor path-loss exponent)
 
----
-
 ## Distance Estimation Model
 
-Improved path-loss model:
+Path-loss model:
 
 ```
 distance (m) = 10 ^ ((txPower - RSSI) / (10 * 2.2))
@@ -62,4 +60,4 @@ We tested the distance estimation model at several known distances using measure
 
 ### Analysis
 
-The initial model, which used `txPower = 0` and `n = 4.58`, resulted in significant overestimation of distances and was not suitable for practical use. After calibrating the model by setting `txPower = -58 dBm` (based on the measured RSSI at 1 meter) and adjusting the path-loss exponent to `n = 2.2`, the distance estimates aligned much more closely with the actual values. Most measurements now fall within ±0.8 meters of the true distance, and the estimate at 1 meter is exactly accurate. As expected, minor errors increase with distance due to RSSI fluctuations, but overall the model performs reliably for short-range BLE-based distance estimation.
+The initial model our team built, which used `txPower = 0` and `n = 4.58`, resulted in significant overestimation of distances and was not suitable for practical use. One major issue was the use of an arbitrary `txPower` value (0 dBm), which did not reflect the actual signal strength observed at a known reference distance. In BLE-based distance estimation, `txPower` should represent the expected RSSI at a distance of 1 meter, as it serves as the baseline for the path-loss model. In our environment, the average RSSI at 1 meter was measured to be approximately `-58 dBm`, and we updated our model accordingly. After calibrating the model by setting `txPower = -58 dBm` and adjusting the path-loss exponent to `n = 2.2`, the distance estimates aligned much more closely with the actual values. Most measurements now fall within ±0.8 meters of the true distance, and the estimate at 1 meter is exactly accurate. As expected, minor errors increase with distance due to RSSI fluctuations, but overall the model performs reliably for short-range BLE-based distance estimation.
