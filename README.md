@@ -46,8 +46,6 @@ Where:
 
 We tested the distance estimation model at several known distances using measured RSSI values and compared them with the estimated distances based on the improved model.
 
-### Results Table
-
 | Actual Distance (m) | Measured Distance (m) | Error (m) |
 |---------------------|------------------------|-----------|
 | 0.5                 | 0.39                   | 0.11      |
