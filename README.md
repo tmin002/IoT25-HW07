@@ -58,11 +58,13 @@ We tested the distance estimation model at several known distances using measure
 
 ### Test video
 
-Serial Monitor
+Serial Monitor<br>
 [![Watch the video](https://img.youtube.com/vi/PsfHGMFpzy0/0.jpg)](https://youtu.be/PsfHGMFpzy0)
+<br>
 
-LED blinking demonstration based on proximity
+LED blinking demonstration based on proximity<br>
 [![Watch the video](https://img.youtube.com/vi/Xlhx_D0ntHQ/0.jpg)](https://youtu.be/Xlhx_D0ntHQ)
+<br>
 
 ### Analysis
 
